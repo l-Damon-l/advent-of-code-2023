@@ -1,6 +1,12 @@
 pub trait AdventOfCodeDay {
-    fn part1<T>(&self) -> T;
-    fn part2<T>(&self) -> T;
+
+    const FILENAME: &'static str;
+
+    type Part1Type;
+    type Part2Type;
+
+    fn part1() -> Self::Part1Type;
+    fn part2() -> Self::Part2Type;
 }
 
 // #[cfg(test)]
