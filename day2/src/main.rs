@@ -49,7 +49,7 @@ impl AdventOfCodeDay for Day2 {
     type Part1Type = u32;
     type Part2Type = u32;
 
-    fn part1() -> Self::Part1Type {
+    fn part1() -> u32 {
         let mut input_bag = GameBag::new();
         input_bag.add("red".to_string(), 12);
         input_bag.add("green".to_string(), 13);
@@ -62,7 +62,7 @@ impl AdventOfCodeDay for Day2 {
             .sum()
     }
 
-    fn part2() -> Self::Part2Type {
+    fn part2() -> u32 {
         Self::get_games_from_file()
             .into_iter()
             .map(|game_session| game_session.part_2_power())

@@ -13,6 +13,7 @@ impl GameSession {
         }
     }
 
+    /// Takes in an input bag and returns true if the output of the games is possible given that bag, false otherwise.
     pub fn is_possible(&self, input_bag: &GameBag) -> bool {
         for bag in &self.bags {
             for (key, value) in &bag.bag {
@@ -28,6 +29,8 @@ impl GameSession {
 
         true
     }
+
+    /// Returns the product of the maximum number of each color in the session bags.
     pub fn part_2_power(&self) -> u32 {
         // Get each unique color (key) in the session bags
         let unique_colours = self.bags.iter()
