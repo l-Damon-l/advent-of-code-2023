@@ -4,8 +4,7 @@ use aoc::AdventOfCodeDay;
 use crate::game::{GameBag, GameSession};
 
 fn main() {
-    println!("Part 1: {}", Day2::part1());
-    println!("Part 2: {}", Day2::part2());
+    Day2::print_answers();
 }
 
 struct Day2;

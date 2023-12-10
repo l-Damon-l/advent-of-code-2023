@@ -106,8 +106,7 @@ fn get_first_digit_as_u32(mut chars: impl Iterator<Item=char>) -> Option<u32> {
 }
 
 fn main() {
-    println!("Part 1: {}", Day1::part1());
-    println!("Part 2: {}", Day1::part2());
+    Day1::print_answers();
 }
 
 
