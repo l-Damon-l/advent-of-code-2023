@@ -23,7 +23,6 @@ impl Day4 {
             // remove the card number from the start
             let winning_numbers = winning_numbers.split_once(':').unwrap().1;
 
-            // split the winning numbers into a vector
             let winning_numbers = winning_numbers
                 .split_whitespace()
                 .map(|num| num.parse::<u32>().unwrap())
