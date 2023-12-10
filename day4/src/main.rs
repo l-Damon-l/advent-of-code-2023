@@ -54,7 +54,6 @@ impl AdventOfCodeDay for Day4 {
         Self::parse_input().sum_scores()
     }
 
-    // This can take a little while when not running in release mode
     fn part2() -> Self::Part2Type {
         Self::parse_input().count_all_card_duplications()
     }
@@ -94,8 +93,8 @@ impl WinningNumbersAndCard {
             .count() as u32
     }
 
-    fn add_duplication(&mut self) {
-        self.times += 1;
+    fn add_duplications(&mut self, num_dupes: u32) {
+        self.times += num_dupes;
     }
 }
 
@@ -114,19 +113,17 @@ impl WinningNumbersAndCards {
     fn count_all_card_duplications(&mut self) -> u32 {
         let mut total = 0u32;
         for i in 0..self.number_sets.len() {
-            for _dupe_num in 0..self.number_sets[i].times {
-                total += 1;
-                let num_matches = self.number_sets[i].get_num_matches();
-                self.add_dupe_to_sets(i + 1, num_matches as usize);
-            }
+            total += self.number_sets[i].times;
+            let num_matches = self.number_sets[i].get_num_matches();
+            self.add_dupe_to_sets(i + 1, num_matches as usize, self.number_sets[i].times);
         }
 
         total
     }
 
-    fn add_dupe_to_sets(&mut self, start_index: usize, num_sets: usize) {
+    fn add_dupe_to_sets(&mut self, start_index: usize, num_sets: usize, num_dupes: u32) {
         for i in start_index..start_index + num_sets {
-            self.number_sets[i].add_duplication();
+            self.number_sets[i].add_duplications(num_dupes);
         }
     }
 }
