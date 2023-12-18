@@ -14,8 +14,6 @@ struct ExpandingRowAndCols {
 struct Day11;
 
 impl AdventOfCodeDay for Day11 {
-    const FILENAME: &'static str = "input.txt";
-    const TEST_FILENAME: Option<&'static str> = Some("test_input.txt");
     type Part1Type = u128;
     type Part2Type = u128;
 
@@ -149,7 +147,7 @@ mod tests {
 
     fn test_fn(is_part_2: bool) -> u128 {
         get_planet_pairs(&get_planet_positions(
-            Day11::TEST_FILENAME.unwrap(),
+            Day11::TEST_FILENAME,
             is_part_2,
         ))
         .iter()
