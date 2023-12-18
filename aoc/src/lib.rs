@@ -2,6 +2,8 @@ pub trait AdventOfCodeDay {
 
     const FILENAME: &'static str;
 
+    const TEST_FILENAME: Option<&'static str> = None;
+
     type Part1Type : std::fmt::Display;
     type Part2Type : std::fmt::Display;
 
