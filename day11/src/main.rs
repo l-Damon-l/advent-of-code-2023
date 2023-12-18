@@ -148,7 +148,7 @@ mod tests {
     use super::*;
 
     fn test_fn(is_part_2: bool) -> u128 {
-        Day11::get_planet_pairs(&Day11::get_planet_positions_w_file(
+        get_planet_pairs(&get_planet_positions(
             Day11::TEST_FILENAME.unwrap(),
             is_part_2,
         ))
