@@ -21,15 +21,15 @@ impl AdventOfCodeDay for Day11 {
 
     fn part1() -> Self::Part1Type {
         get_planet_pairs(&get_planet_positions(Day11::FILENAME, false))
-            .iter()
-            .map(|(p1, p2)| get_shortest_path(*p1, *p2))
+            .into_iter()
+            .map(|(p1, p2)| get_shortest_path(p1, p2))
             .sum()
     }
 
     fn part2() -> Self::Part2Type {
         get_planet_pairs(&get_planet_positions(Day11::FILENAME, true))
-            .iter()
-            .map(|(p1, p2)| get_shortest_path(*p1, *p2))
+            .into_iter()
+            .map(|(p1, p2)| get_shortest_path(p1, p2))
             .sum()
     }
 }
