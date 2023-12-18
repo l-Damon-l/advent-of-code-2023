@@ -1,8 +1,8 @@
 pub trait AdventOfCodeDay {
 
-    const FILENAME: &'static str;
+    const FILENAME: &'static str = "input.txt";
 
-    const TEST_FILENAME: Option<&'static str> = None;
+    const TEST_FILENAME: &'static str = "test_input.txt";
 
     type Part1Type : std::fmt::Display;
     type Part2Type : std::fmt::Display;
